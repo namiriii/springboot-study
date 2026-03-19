@@ -1,12 +1,25 @@
 package com.namil.springbootstudy;
+import com.namil.springbootstudy.dto.HelloRequest;
+import com.namil.springbootstudy.dto.HelloResponse;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+
 
 @RestController
 public class HelloController {
 
     @GetMapping("/hello")
-    public String hello() {
-        return "hello spring boot";
+    public HelloResponse hello() {
+        return new HelloResponse("hello spring boot", "10:00");
     }
+
+    @PostMapping("/hello")
+    public HelloResponse helloPost(@RequestBody HelloRequest request) {
+        return new HelloResponse(request.getName(), "응답시간");
+    }
+
+
 }

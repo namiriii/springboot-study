@@ -7,6 +7,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "hello spring boot";
+        return "hello spring boot v2";
     }
 }

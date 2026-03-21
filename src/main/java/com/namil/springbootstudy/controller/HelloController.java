@@ -1,6 +1,7 @@
 package com.namil.springbootstudy.controller;
 import com.namil.springbootstudy.dto.HelloRequest;
 import com.namil.springbootstudy.dto.HelloResponse;
+import com.namil.springbootstudy.service.HelloService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+    private final HelloService helloService;
+
+    public HelloController(HelloService helloService) {
+        this.helloService = helloService;
+    }
+
     @GetMapping("/hello")
     public HelloResponse hello() {
         return new HelloResponse("hello spring boot", "10:00");
@@ -18,7 +25,7 @@ public class HelloController {
 
     @PostMapping("/hello")
     public HelloResponse helloPost(@RequestBody HelloRequest request) {
-        return new HelloResponse(request.getName(), "응답시간");
+        return helloService.hello(request);
     }
 
 

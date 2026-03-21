@@ -1,4 +1,4 @@
-package com.namil.springbootstudy;
+package com.namil.springbootstudy.controller;
 import com.namil.springbootstudy.dto.HelloRequest;
 import com.namil.springbootstudy.dto.HelloResponse;
 import org.springframework.web.bind.annotation.GetMapping;

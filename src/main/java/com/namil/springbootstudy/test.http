@@ -1,6 +1,7 @@
-POST http://localhost:8081/hello
+POST http://localhost:8081/bye
 Content-Type: application/json
 
 {
-  "name": "namil"
+  "name": "namil",
+  "age": 0
 }

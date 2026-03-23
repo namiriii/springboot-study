@@ -2,6 +2,7 @@ package com.namil.springbootstudy.controller;
 import com.namil.springbootstudy.dto.HelloRequest;
 import com.namil.springbootstudy.dto.HelloResponse;
 import com.namil.springbootstudy.service.HelloService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +27,11 @@ public class HelloController {
     @PostMapping("/hello")
     public HelloResponse helloPost(@RequestBody HelloRequest request) {
         return helloService.hello(request);
+    }
+
+    @PostMapping("/bye")
+    public HelloResponse byePost(@RequestBody @Valid HelloRequest request) {
+        return helloService.bye(request);
     }
 
 

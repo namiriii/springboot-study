@@ -1,7 +1,19 @@
-POST http://localhost:8081/bye
-Content-Type: application/json
+#DELETE http://localhost:8081/users/1
 
-{
-  "name": "namil",
-  "age": 0
-}
+GET http://localhost:8081/users/1
+
+#POST http://localhost:8081/save-user
+#Content-Type: application/json
+#
+#{
+#  "name": "namil",
+#  "age": 20
+#}
+
+#PUT http://localhost:8081/users/1
+#Content-Type: application/json
+#
+#{
+#  "name": "namil2",
+#  "age": 30
+#}

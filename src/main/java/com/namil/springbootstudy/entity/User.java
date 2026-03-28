@@ -1,5 +1,6 @@
 package com.namil.springbootstudy.entity;
 
+import com.namil.springbootstudy.dto.HelloRequest;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
